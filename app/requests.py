@@ -15,3 +15,26 @@ def configure_request(app):
     keyword_url = app.config["NEWS_API_SEARCH_KEYWORD_BASE_URL"]
     breaking_news_url = app.config["NEWS_API_BREAKING_NEWS_BASE_URL"]
 
+def get_sources():
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_sources_url = base_url.format(api_Key) #construct the news api url
+
+    with urllib.request.urlopen(get_sources_url) as url: #sending request as url
+        get_sources_data = url.read() #reading the response and storing in a get_sources_data variable
+        get_sources_response = json.loads(get_sources_data) #converting the JSON response to a Python dictionary
+
+        sources_results = None
+
+        if get_sources_response['sources']: #checking if response has any data
+            sources_results_list = get_sources_response['sources']
+            sources_results = process_sources(sources_results_list)  
+
+    return sources_results #return a list of sources objects
+
+
+    
+    
+
+
