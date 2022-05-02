@@ -4,15 +4,15 @@
 {% block styles%}
 {{ super() }}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" type="text/css">
+<link rel="stylesheet" href="{{url_for('static',filename='CSS/index.css')}}" type="text/css">
 {% endblock styles%}
 <!-- Content block -->
 {% block content %}
 <div class="row">
     <div class="header col-md-3">
         <a href="/">
-            <h1 class="visible">Popote<br>News</h1>
-            <h1 class="not-visible">Popote News</h1>
+            <h1 class="visible">Popote<br>News</h1><br>
+            <!-- <h1 class="not-visible">Popote News</h1> -->
         </a>
         <h5>The World in a Headline</h5>
         <br>

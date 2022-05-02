@@ -46,7 +46,7 @@ a:visited {
 }
 
 .col-md-3 {
-    background-color: #6F1D1B;
+    background-color: #19093f;
     padding-left: 2%;
     color: white;
 }
@@ -87,12 +87,12 @@ form input[type=text] {
 
 h3 {
     font-size: 3rem;
-    color: #6F1D1B;
+    color: #0f1050;
     font-family: 'Playfair Display', serif;
 }
 
 hr {
-    width: 70%
+   width: 70%
 }
 
 .header .not-visible {
@@ -104,57 +104,57 @@ hr {
         float: none;
     }
 
-    .row {
+.row {
         position: static;
     }
 
-    .header {
+.header {
         position: static;
         text-align: center;
         align-items: center;
         justify-items: center;
     }
 
-    .col-md-3,
-    .col-md-9 {
+.col-md-3,
+.col-md-9 {
         padding: 0;
     }
 
-    h3 {
+h3 {
         font-size: 3rem;
     }
 
-    button {
+button {
         margin-bottom: 2% !important;
     }
 
-    h4 .card-text {
+h4 .card-text {
         font-size: 1.25rem;
     }
 
-    p {
+p {
         font-size: 1.25rem;
     }
 
-    .card-title h5 {
+.card-title h5 {
         font-size: 2rem;
     }
 
-    body,
+body,
     a {
         font-size: 1.5rem;
     }
 
-    form {
+form {
         padding-left: 10%;
         padding-left: 10%;
     }
 
-    .visible {
+.visible {
         display: none;
     }
 
-    .not-visible {
+.not-visible {
         display: initial !important;
         font-size: 3.5rem;
         padding-top: 5%;
