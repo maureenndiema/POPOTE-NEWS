@@ -1,0 +1,172 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.container-fluid,
+body {
+    padding: 0;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4rem;
+    text-shadow: 0 12px 22px rgba(0, 0, 0, 0.35);
+}
+
+a {
+    color: inherit;
+}
+
+a:hover,
+a:visited {
+    text-decoration: none;
+}
+
+.sources,
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sources a:visited,
+.articles a:visited {
+    color: #6F1D1B;
+}
+
+.sources a:hover,
+.articles a:hover,
+.articles a:visited {
+    color: #6F1D1B;
+}
+
+.header {
+    height: 100%;
+    position: fixed;
+}
+
+.col-md-3 {
+    background-color: #6F1D1B;
+    padding-left: 2%;
+    color: white;
+}
+
+.col-md-3 a:hover {
+    color: white;
+}
+
+.row {
+    position: relative;
+}
+
+.col-md-9 {
+    padding-left: 1%;
+    padding-right: 1%;
+    float: right;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 32%;
+}
+
+.btn {
+    background-color: transparent !important;
+    border: 2px solid white;
+}
+
+form input[type=text] {
+    border-radius: 0;
+    border-color: transparent;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    border-radius: 1;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 3rem;
+    color: #6F1D1B;
+    font-family: 'Playfair Display', serif;
+}
+
+hr {
+    width: 70%
+}
+
+.header .not-visible {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .col-md-9 {
+        float: none;
+    }
+
+    .row {
+        position: static;
+    }
+
+    .header {
+        position: static;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .col-md-3,
+    .col-md-9 {
+        padding: 0;
+    }
+
+    h3 {
+        font-size: 3rem;
+    }
+
+    button {
+        margin-bottom: 2% !important;
+    }
+
+    h4 .card-text {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    .card-title h5 {
+        font-size: 2rem;
+    }
+
+    body,
+    a {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding-left: 10%;
+        padding-left: 10%;
+    }
+
+    .visible {
+        display: none;
+    }
+
+    .not-visible {
+        display: initial !important;
+        font-size: 3.5rem;
+        padding-top: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media (min-width: 2559px) {
+    h1 {
+        font-size: 10rem;
+    }
+
+   
+}
