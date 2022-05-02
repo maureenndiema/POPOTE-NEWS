@@ -44,3 +44,5 @@ def keyword(keyword_name):
     searched_keyword = get_keyword(keyword_name_format)
     title = f'{keyword_name.title()}'
     display_keyword = keyword_name.upper()
+
+    return render_template('search.html', keyword = searched_keyword, title = title, display_keyword=display_keyword )
