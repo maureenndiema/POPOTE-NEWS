@@ -1,5 +1,6 @@
 import urllib.request,json #helps create a connection to our API URL and send a request, formats the JSON response to a Python dictionary
 from .models import Sources,Articles,Keyword,Breaking
+from datetime import datetime
 
 api_Key= None
 base_url= None
@@ -19,7 +20,7 @@ def get_sources():
     '''
     Function that gets the json response to our url request
     '''
-    get_sources_url = base_url.format(api_Key) #construct the news api url
+    get_sources_url = 'http://newsapi.org/v2/sources?&apiKey=19408816f7f6419b99e2896d8f6bea16'.format(api_Key) #construct the news api url
 
     with urllib.request.urlopen(get_sources_url) as url: #sending request as url
         get_sources_data = url.read() #reading the response and storing in a get_sources_data variable
@@ -58,7 +59,7 @@ def get_top_articles(id):
     '''
     Function that gets the json response to our url request
     '''
-    get_articles_url = top_articles_url.format(id, api_Key) #construct the top articles api url
+    get_articles_url = 'http://newsapi.org/v2/top-headlines?sources={}&apiKey=19408816f7f6419b99e2896d8f6bea16'.format(id, api_Key) #construct the top articles api url
 
     with urllib.request.urlopen(get_articles_url) as url: #sending request as url
         get_articles_data = url.read()
@@ -87,8 +88,8 @@ def process_articles(articles_list):
             articles_results.append(articles_object)
     return articles_results
 
-    def get_keyword(keyword_name):
-    search_keyword_url = keyword_url.format(keyword_name, api_Key)
+def get_keyword(keyword_name):
+    search_keyword_url = 'https://newsapi.org/v2/everything?q={}&sortBy=relevancy,publishedAt&pageSize=30&apiKey=19408816f7f6419b99e2896d8f6bea16'.format(keyword_name, api_Key)
     with urllib.request.urlopen(search_keyword_url) as url:
         search_keyword_data = url.read()
         search_keyword_response = json.loads(search_keyword_data)
@@ -118,7 +119,7 @@ def process_keyword(keyword_list):
     return keyword_results
 
 def get_breaking_news():
-    get_breaking_news_url = breaking_news_url.format(api_Key)
+    get_breaking_news_url = 'http://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=19408816f7f6419b99e2896d8f6bea16'.format(api_Key)
 
     with urllib.request.urlopen(get_breaking_news_url) as url:
         get_breaking_data = url.read()

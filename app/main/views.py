@@ -11,7 +11,7 @@ def index():
     #Getting sources
     sources = get_sources()
     breaking_news = get_breaking_news()
-    title = 'The Daily Telegram'
+    title = 'Popote News'
     get_keyword = request.args.get('keyword_query')
 
     if get_keyword:
