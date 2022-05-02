@@ -33,6 +33,27 @@ def get_sources():
 
     return sources_results #return a list of sources objects
 
+def process_sources(sources_list):
+    '''
+    Function  that processes the sources result and transform them to a list of Objects
+    Args:
+        sources_list: A list of dictionaries that contain sources details
+    Returns :
+        sources_results: A list of sources objects
+    '''
+    sources_results = [] #to store our newly created sources objects
+    for sources_item in sources_list:
+        id = sources_item.get('id')
+        name = sources_item.get('name')
+        description = sources_item.get('description')
+        url = sources_item.get('url')
+        category = sources_item.get('category')
+        language = sources_item.get('language')
+
+        sources_object = Sources(id, name, description, url, category, language)
+        sources_results.append(sources_object)
+    return sources_results
+
 
     
     
