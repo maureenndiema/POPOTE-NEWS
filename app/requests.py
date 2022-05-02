@@ -117,6 +117,41 @@ def process_keyword(keyword_list):
 
     return keyword_results
 
+def get_breaking_news():
+    get_breaking_news_url = breaking_news_url.format(api_Key)
+
+    with urllib.request.urlopen(get_breaking_news_url) as url:
+        get_breaking_data = url.read()
+        get_breaking_response = json.loads(get_breaking_data)
+
+        breaking_results = None
+
+        if get_breaking_response['articles']:
+            breaking_results_list = get_breaking_response['articles']
+            breaking_results = process_breaking_news(breaking_results_list)
+
+        return breaking_results
+
+def process_breaking_news(breaking_news_list):
+    breaking_results = []
+    for breaking_item in breaking_news_list:
+        title = breaking_item.get('title')
+        imageurl = breaking_item.get('urlToImage')
+        url = breaking_item.get('url')
+
+        breaking_object = Breaking(title,imageurl, url)
+        breaking_results.append(breaking_object)
+
+    return breaking_results
+    
+def date_convert(date):
+    dd=date[8:10]
+    mm=date[5:7]
+    yyyy=date[0:4]    
+    time=date[11:16]
+    date_new_format= dd+"-"+mm+"-"+yyyy+"  "+time+" hrs"
+    return date_new_format
+
 
     
     
