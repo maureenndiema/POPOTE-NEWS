@@ -29,3 +29,33 @@
 </div>
 {%endfor%}
 {% endmacro %}
+
+{% macro displayArticles(articles_list) %}
+{% for article in articles_list%}
+<div class="col-md-4">
+  <div class="card">
+    <img src="{{article.imageurl}}" class="card-img-top img-responsive" alt="article image">
+    <div class="card-body">
+      <h4 class="card-text">{{article.title}}</h4>
+      <p> published on: {{article.publishedAt}}</p>
+      <a href={{article.url}} target="_blank" class="card-link">Read article</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endmacro %}
+
+{% macro displayKeyword(keyword_list) %}
+{% for keyword in keyword_list%}
+<div class="col-md-4">
+  <div class="card">
+    <img src="{{keyword.imageurl}}" class="card-img-top img-responsive" alt="article image">
+    <div class="card-body">
+      <h4 class="card-text">{{keyword.title}}</h4>
+      <p> published on: {{keyword.publishedAt}}</p>
+      <a href={{keyword.url}} target="_blank" class="card-link">Read article</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endmacro %}
