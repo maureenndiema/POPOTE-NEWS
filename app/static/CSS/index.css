@@ -1,0 +1,74 @@
+.card {
+    margin: 1%;
+    margin-bottom: 3%;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card .card-title {
+    font-size: 2.7rem;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+}
+
+.card-title .tooltiptext{
+    visibility: hidden;
+    width: 12rem;
+    background-color: #6F1D1B;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 25%;
+    margin-left: -60px;
+    /*animate tooltip*/
+    opacity: 0;
+    transition: opacity 1s;
+}
+.card-title .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #6F1D1B transparent transparent transparent;
+  }
+.card-title:hover .tooltiptext{
+    visibility: visible;
+    opacity: 1;
+}
+.language {
+    float: right;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    display: inline-flex;
+}
+.carousel .item img{
+    object-fit: cover;
+    width: 100%;
+    height: 30rem;
+}
+.carousel .item{
+    object-fit: cover;
+}
+.carousel{
+    width: 100%;
+}
+.carousel a:hover{
+    color: #6F1D1B;
+}
+.carousel-caption{
+    background-color: rgba(0, 0, 0, 0.294);
+    padding: 0.25rem;
+    color: white;      
+    font-family: 'Roboto', sans-serif;
+}
