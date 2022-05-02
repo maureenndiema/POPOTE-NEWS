@@ -87,6 +87,36 @@ def process_articles(articles_list):
             articles_results.append(articles_object)
     return articles_results
 
+    def get_keyword(keyword_name):
+    search_keyword_url = keyword_url.format(keyword_name, api_Key)
+    with urllib.request.urlopen(search_keyword_url) as url:
+        search_keyword_data = url.read()
+        search_keyword_response = json.loads(search_keyword_data)
+
+        keyword_results = None
+
+        if search_keyword_response['articles']:
+            search_keyword_list = search_keyword_response['articles']
+            keyword_results = process_keyword(search_keyword_list)
+
+    return keyword_results
+
+def process_keyword(keyword_list):
+    keyword_results = []
+    for keyword in keyword_list:
+        author = keyword.get('author')
+        title = keyword.get('title')
+        imageurl = keyword.get('urlToImage')
+        publishedOn = keyword.get('publishedAt')
+        publishedAt = date_convert(publishedOn)
+        url = keyword.get('url')
+
+        if imageurl:
+            keyword_object = Keyword(author,title,imageurl,publishedAt,url)
+            keyword_results.append(keyword_object)
+
+    return keyword_results
+
 
     
     
